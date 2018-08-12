@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<title>Game Scraper</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+    hr {
+        border: 1px solid rgb(96, 77, 15);
+    }
+    #comments{
+        overflow:scroll;
+        width:100%;
+        height:60%;
+
+    }
+    #commentCard {
+        display:none;
+        width: 70%;
+        height: 70%;
+        position: fixed;
+        left: 15%;
+        right: 15%;
+        background-color: rgba(254, 244, 210, 0.879);
+    }
+
+    form {
+        text-align: bottom;
+        position: absolute;
+        bottom: 5px;
+    }
+
+    .zoom {
+        padding: 50px;
+        background-color: green;
+        transition: transform .2s;
+        /* Animation */
+        margin: 0 auto;
+
+    }
+
+    .comment-button {
+        display: none;
+        align-self: center;
+        margin: 0 auto;
+
+    }
+
+    .zoom:hover {
+        background-color: rgba(0, 0, 0, 0.077);
+        transform: scale(1.5);
+    }
+
+    .zoom:hover .comment-button {
+        display: block;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Karma", sans-serif;
+        text-align: center;
+    }
+
+    .w3-bar-block .w3-bar-item {
+        padding: 20px
+    }
+
+    a {
+        color: rgb(0, 51, 255);
+        font-size: 12px;
+    }
+
+    .w3-quarter {
+        background-color: rgba(0, 0, 0, 0.29);
+    }
+</style>
+
+<body id="page">
+
+
+
+    <!-- Top menu -->
+    <div class="w3-top">
+        <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+            <div class="w3-center w3-padding-16">Game News Scrubber</div>
+            <button id='scrape'>Scrape</button>
+        </div>
+    </div>
+
+    <!-- !PAGE CONTENT! -->
+    <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+        <!-- First Photo Grid-->
+        <!-- <div class="w3-quarter">
+                <!-- <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%"> -->
+        <!-- <h3 id="articles"></h3> -->
+        <!-- <p id="notes" style="font-size: 12pt"></p> -->
+    </div>
+</body>
+    <div id="commentCard" style:"z-index:10;">
+        <h2>Comments</h2>
+        <hr >
+
+
+
+        <div id="comments" style="display: inline-block;
+        overflow: auto;">
+
+    </div>
+            <form>
+            <input id='commentText' placeholder="your thoughts" type="text" name="comment" size="115">
+                
+            <br>
+            <input type="submit" id="savecomment">
+            <button type="close" id="close">close</button>
+            </form>
+        </div>
+    </div>
+    
+
+
+
+
+
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+
+
+</html>
