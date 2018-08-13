@@ -5,8 +5,9 @@
 <html>
 <title>Game Scraper</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <style>
     hr {
@@ -35,8 +36,7 @@
     }
 
     .zoom {
-        padding: 50px;
-        background-color: green;
+        background-color: grey;
         transition: transform .2s;
         /* Animation */
         margin: 0 auto;
@@ -44,9 +44,14 @@
     }
 
     .comment-button {
-        display: none;
+        /* display: none; */
         align-self: center;
         margin: 0 auto;
+        position: absolute;
+        bottom: 0%;
+        right: 40%;
+        left: 40%;
+        width:auto;
 
     }
 
@@ -97,7 +102,8 @@
     </div>
 
     <!-- !PAGE CONTENT! -->
-    <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+    <div class="container">
+        <div class="row" id="content">
 
         <!-- First Photo Grid-->
         <!-- <div class="w3-quarter">

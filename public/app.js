@@ -1,28 +1,29 @@
 // Grab the articles as a json
+// image url array
+var images=["https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg"];
 
 var modalShow = false;
 $.getJSON( "/articles", function ( data ) {
     // For each one
-    for ( var i = 0; i < data.length; i++ ) {
+    for ( var i = 0; i < images.length; i++ ) {
         // Display the apropos information on the page
         var article = "articles" + i;
         var link = "link" + i;
-        var href = "https://www.gamespot.com" + data[i].link;
 
         //create a holder
-        var row = $( '<div/>', { class: 'w3-quarter zoom' } );
+        var row = $( '<div/>', { class: 'col-sm-4 zoom' } );
         row.attr( 'style', 'height:240px' );
-        row.append( $( '<img>' ) );
+        // row.append( $( '<img>' ) );
         row.append( $( '<h7  id =' + article + '></h7>' ) );
-        row.append( $( '<br>)' ) );
-        row.append( $( '<a id ="link' + i + '"href=' + href + '></a><br>' ) );
-        row.append( $( '<input type="button" data-id = ' + data[i]._id + ' class="comment-button" value="comment" style:"display:none"/>' ) );
+        row.append( $( '<img style= "max-height:90%;max-width:100%;" id ="link' + i + '"src=' + images[i] + '></img>' ) );
+        row.append( $( '<input type="button"  data-id = ' + i + ' class="comment-button" value="comment" style:"display:none;"/></div>' ) );
+        // $(".comment-button").hide();
         $( '#content' ).append( row );
         article = "#" + article;
 
-        $( "#articles" + i ).append( data[i].title );
-        $( "#articles" + i ).attr( "data-id", data[i]._id );
-        $( "#link" + i ).append( data[i].link );
+        $( "#articles" + i ).append( data[i] );
+        $( "#articles" + i ).attr( "data-id", data[i] );
+        $( "#link" + i ).append( data[i] );
 
         //   $("#articles"+i).append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
     }
